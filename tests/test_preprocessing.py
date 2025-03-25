@@ -8,7 +8,7 @@ from preprocessing.feature_selection import select_features
 from preprocessing.normalisation import normalize_data
 
 # Define necessary paths
-RAW_DATA_PATH = "data/raw/dataset.csv"
+RAW_DATA_PATH = r"data\raw\snRNA_seq_data.csv"
 
 class TestPreprocessing(unittest.TestCase):
 
