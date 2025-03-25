@@ -4,8 +4,8 @@ import pandas as pd
 
 # Define training settings
 USE_ML_MODEL = True
-USE_DL_MODEL = False
-PROCESSED_DATA_PATH = "data/processed/processed_data.csv"
+USE_DL_MODEL = True
+PROCESSED_DATA_PATH = r"data\processed\processed_data.csv"
 
 EPOCHS = 20
 BATCH_SIZE = 32
@@ -13,7 +13,7 @@ BATCH_SIZE = 32
 def train():
     data = pd.read_csv(PROCESSED_DATA_PATH)
 
-    X, y = data.drop(columns=['target']), data['target']
+    X, y = data.drop(columns=['S100B']), data['S100B']
 
     if USE_ML_MODEL:
         ml_model = train_ml_model(X, y, model_type="random_forest")
