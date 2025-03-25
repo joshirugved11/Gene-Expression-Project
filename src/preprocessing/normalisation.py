@@ -1,8 +1,8 @@
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 
-SELECTED_FEATURES_PATH = "data/processed/selected_features.csv"
-NORMALIZED_DATA_PATH = "data/processed/normalized_data.csv"
+SELECTED_FEATURES_PATH = r"data\processed\selected_features.csv"
+NORMALIZED_DATA_PATH = r"data\processed\normalized_data.csv"
 NORMALIZATION_METHOD = "minmax"
 
 def normalize_data(df: pd.DataFrame) -> pd.DataFrame:

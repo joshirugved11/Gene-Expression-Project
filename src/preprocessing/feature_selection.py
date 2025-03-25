@@ -1,9 +1,9 @@
 import pandas as pd
 from sklearn.feature_selection import SelectKBest, f_classif
 
-PROCESSED_DATA_PATH = "data/processed/processed_data.csv"
-SELECTED_FEATURES_PATH = "data/processed/selected_features.csv"
-TARGET_COLUMN = "target"
+PROCESSED_DATA_PATH = r"data\processed\processed_data.csv"
+SELECTED_FEATURES_PATH = r"data\processed\selected_features.csv"
+TARGET_COLUMN = "S100B"
 NUM_FEATURES = 10
 
 def select_features(df: pd.DataFrame) -> pd.DataFrame:
