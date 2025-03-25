@@ -4,10 +4,10 @@ from preprocessing.normalisation import normalize_data
 import pandas as pd
 
 # Define file paths
-RAW_DATA_PATH = "data/raw/dataset.csv"
-PROCESSED_DATA_PATH = "data/processed/processed_data.csv"
-SELECTED_FEATURES_PATH = "data/processed/selected_features.csv"
-NORMALIZED_DATA_PATH = "data/processed/normalized_data.csv"
+RAW_DATA_PATH = r"data\raw\snRNA_seq_data.csv"
+PROCESSED_DATA_PATH = r"data\processed\processed_data.csv"
+SELECTED_FEATURES_PATH = r"data\processed\selected_features.csv"
+NORMALIZED_DATA_PATH = r"data\processed\normalized_data.csv"
 
 if __name__ == "__main__":
     print("Loading dataset...")
