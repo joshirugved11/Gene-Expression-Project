@@ -6,7 +6,7 @@ from main import PROCESSED_DATA_PATH
 from models.evaluate import USE_ML_MODEL, USE_DL_MODEL
 from models.ml_models import train_ml_model, train_dl_model
 
-MODEL_DIR = "models/"
+MODEL_DIR = "saved_models/"
 
 def train():
     data = pd.read_csv(PROCESSED_DATA_PATH)
