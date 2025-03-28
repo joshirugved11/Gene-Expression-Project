@@ -1,11 +1,13 @@
 import unittest
 import pandas as pd
 import sys
+import os
 
-sys.path.append("..")
-from preprocessing.encode_labels import encode_labels
-from preprocessing.feature_selection import select_features
-from preprocessing.normalisation import normalize_data
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src")))
+
+from src.preprocessing.encode_labels import encode_labels
+from src.preprocessing.feature_selection import select_features
+from src.preprocessing.normalisation import normalize_data
 
 # Define necessary paths
 RAW_DATA_PATH = r"data\raw\snRNA_seq_data.csv"
