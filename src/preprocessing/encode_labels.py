@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 
 LABEL_COLUMNS = ["PLEKHN1", "TTLL10", "HES4"]
-PROCESSED_DATA_PATH = r"data\processed\processed_data.csv"
+PROCESSED_DATA_PATH = r"data\raw\snRNA_seq_data.csv"
 
 def encode_labels(df: pd.DataFrame) -> pd.DataFrame:
     encoder = LabelEncoder()

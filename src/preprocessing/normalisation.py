@@ -11,6 +11,7 @@ def normalize_data(df: pd.DataFrame) -> pd.DataFrame:
 
 if __name__ == "__main__":
     df = pd.read_csv(SELECTED_FEATURES_PATH)
+    df = df.drop(columns=["Unnamed: 0"], errors="ignore")  # Add this line
     df_normalized = normalize_data(df)
     df_normalized.to_csv(NORMALIZED_DATA_PATH, index=False)
     print(f"Normalized data saved to {NORMALIZED_DATA_PATH}")
