@@ -6,8 +6,8 @@ from sklearn.decomposition import PCA
 from mpl_toolkits.mplot3d import Axes3D
 
 # Define file paths
-RAW_DATA_PATH = "data/raw/snRNA_seq_data.csv"  # Update path if necessary
-PROCESSED_DATA_PATH = "data/processed/normalized_data.csv"  # Update path if necessary
+RAW_DATA_PATH = r"data\raw\snRNA_seq_data.csv"  # Update path if necessary
+PROCESSED_DATA_PATH = r"data/processed/normalized_data.csv"  # Update path if necessary
 
 # Define visualization directories (assuming folders are already created)
 BEFORE_DIR = "visualization/before/"
