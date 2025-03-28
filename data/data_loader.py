@@ -15,8 +15,9 @@ print(gene_expression_df.head())
 gene_expression_df = adata.to_df()
 
 # Define path to save the CSV file inside the processed folder
-output_path = os.path.join(os.path.dirname(__file__), "processed", "snRNA_seq_data.csv")
+output_path = os.path.join(os.path.dirname(__file__), "raw", "snRNA_seq_data.csv")
 
 # Save as CSV
-gene_expression_df.to_csv(output_path)
+# Save as CSV without the unnamed first column
+gene_expression_df.to_csv(output_path, index=False)
 print(f"CSV file saved at: {output_path}")
