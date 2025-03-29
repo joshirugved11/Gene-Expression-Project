@@ -7,6 +7,10 @@ from main import PROCESSED_DATA_PATH
 from models.evaluate import USE_ML_MODEL, USE_DL_MODEL
 from models.ml_models import train_ml_model
 from models.dl_models import train_dl_model  # Fixed incorrect import
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
 # Define constants
 SEED = 42  # Fixed seed for reproducibility
