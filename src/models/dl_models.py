@@ -12,22 +12,24 @@ class DLModel(nn.Module):
         self.fc2 = nn.Linear(128, 64)
         self.fc3 = nn.Linear(64, 1)
         self.relu = nn.ReLU()
-        self.sigmoid = nn.Sigmoid()
-
+        # Removed explicit sigmoid here (Handled in loss function)
+    
     def forward(self, x):
         x = self.relu(self.fc1(x))
         x = self.relu(self.fc2(x))
-        x = self.sigmoid(self.fc3(x))
+        x = self.fc3(x)  # No sigmoid here
         return x
 
 def train_dl_model(X, y, epochs=20, batch_size=32):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
-    X_tensor = torch.tensor(X, dtype=torch.float32).to(device)
-    y_tensor = torch.tensor(y, dtype=torch.float32).view(-1, 1).to(device)
+    X_tensor = torch.tensor(X.to_numpy(), dtype=torch.float32).to(device)
+    y_tensor = torch.tensor(y.to_numpy(), dtype=torch.float32).view(-1, 1).to(device)
 
     model = DLModel(input_size=X.shape[1]).to(device)
-    criterion = nn.BCELoss()
+    
+    # Use BCEWithLogitsLoss (better for numerical stability)
+    criterion = nn.BCEWithLogitsLoss()
     optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE)
 
     dataset = torch.utils.data.TensorDataset(X_tensor, y_tensor)
