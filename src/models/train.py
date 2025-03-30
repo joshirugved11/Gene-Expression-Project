@@ -10,7 +10,7 @@ from models.dl_models import train_dl_model  # Fixed incorrect import
 import sys
 import os
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
 # Define constants
 SEED = 42  # Fixed seed for reproducibility
