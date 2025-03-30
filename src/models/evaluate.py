@@ -2,11 +2,11 @@ import pickle
 import torch
 
 USE_ML_MODEL = True
-USE_DL_MODEL = False
+USE_DL_MODEL = True
 
 MODEL_PATHS = {
-    "ml": "models/ml_model.pkl",
-    "dl": "models/dl_model.h5"
+    "ml": "saved_models/ml_model.pkl",
+    "dl": "saved_models/dl_model.h5"
 }
 
 def load_models():
