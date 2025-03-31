@@ -6,19 +6,19 @@ from sklearn.decomposition import PCA
 from mpl_toolkits.mplot3d import Axes3D
 
 # Define file paths
-# RAW_DATA_PATH = r"data\raw\snRNA_seq_data.csv"  # Update path if necessary
+RAW_DATA_PATH = r"data\raw\snRNA_seq_data.csv"  # Update path if necessary
 PROCESSED_DATA_PATH = r"data\processed\processed_data.csv"  # Update path if necessary
 
 # Define visualization directories (assuming folders are already created)
-# BEFORE_DIR = "visualization/before/"
+BEFORE_DIR = "visualization/before/"
 AFTER_DIR = "visualization/after/"
 
 # Load datasets
-# df_raw = pd.read_csv(RAW_DATA_PATH).dropna()
+df_raw = pd.read_csv(RAW_DATA_PATH).dropna()
 df_processed = pd.read_csv(PROCESSED_DATA_PATH).dropna()
 
 # Select only numeric columns for visualization
-# df_raw_numeric = df_raw.select_dtypes(include=[np.number])
+df_raw_numeric = df_raw.select_dtypes(include=[np.number])
 df_processed_numeric = df_processed.select_dtypes(include=[np.number])
 
 # Function to save histogram
@@ -94,12 +94,12 @@ def save_heatmap(df, folder, title):
     plt.close()
 
 # Generate and save visualizations
-'''print("Saving visualizations for raw data (before preprocessing)...")
+print("Saving visualizations for raw data (before preprocessing)...")
 save_histogram(df_raw_numeric, BEFORE_DIR, "Raw Data")
 save_boxplot(df_raw_numeric, BEFORE_DIR, "Raw Data")
 save_scatter(df_raw_numeric, BEFORE_DIR, "Raw Data")
 save_pca(df_raw_numeric, BEFORE_DIR, "Raw Data")
-save_heatmap(df_raw_numeric, BEFORE_DIR, "Raw Data")'''
+save_heatmap(df_raw_numeric, BEFORE_DIR, "Raw Data")
 
 print("Saving visualizations for processed data (after preprocessing)...")
 save_histogram(df_processed_numeric, AFTER_DIR, "Processed Data")
